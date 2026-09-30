@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Puteri od orašastih plodova — Puterko</title>
+<meta name="description" content="Puteri od kikirikija, lešnika, badema, indijskog oraha, pistaća i čoko-lešnik. 100% prirodno, bez dodatog šećera. Izaberite ukus i veličinu.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,800;1,9..144,500&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#3a273d;--plum-d:#241826;--sage:#7c9c85;--gold:#c98a3e;--cream:#f7f2e8;--paper:#fdfbf7;--ink:#241a26;--mute:#75697a;--line:#e6ddc9;--ok:#3f7a5a;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.01em;color:var(--plum)}
+em.sc{font-style:italic;color:var(--gold)}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--plum);color:#fff;border:0;border-radius:999px;padding:.85rem 1.7rem;font:700 .98rem 'Nunito Sans',sans-serif;cursor:pointer;text-decoration:none;transition:background .2s,transform .1s}
+.btn:hover{background:var(--plum-d)}.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--plum);border:1.5px solid var(--plum)}
+.btn.ghost:hover{background:var(--plum);color:#fff}
+.btn.block{width:100%}
+header.top{position:sticky;top:0;z-index:40;background:rgba(253,251,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.logo{display:flex;align-items:center;gap:9px;font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--plum);text-decoration:none}
+.logo img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+nav.main{display:flex;gap:26px;font-size:.95rem;font-weight:600}
+nav.main a{text-decoration:none}nav.main a:hover{color:var(--sage)}
+.cartbtn{position:relative;background:none;border:1.5px solid var(--plum);color:var(--plum);border-radius:999px;padding:.45rem 1rem;font:700 .92rem 'Nunito Sans';display:flex;gap:.5rem;align-items:center}
+.cartbtn:hover{background:var(--plum);color:#fff}
+.cartbtn .n{background:var(--gold);color:#fff;border-radius:999px;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:.78rem;padding:0 6px}
+@media(max-width:760px){nav.main{display:none}}
+
+#pk-ov{position:fixed;inset:0;background:rgba(36,26,38,.5);opacity:0;pointer-events:none;transition:opacity .25s;z-index:90}
+#pk-ov.on{opacity:1;pointer-events:auto}
+#pk-drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--paper);z-index:100;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.18)}
+#pk-drawer.on{transform:none}
+#pk-drawer header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+#pk-drawer header h3{font-size:1.6rem}
+.x{background:none;border:0;font-size:1.8rem;line-height:1;cursor:pointer;color:var(--ink);padding:4px 8px}
+#pk-lines{flex:1;overflow:auto;padding:8px 20px}
+.line{display:grid;grid-template-columns:66px 1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.line img{width:66px;height:80px;object-fit:cover;border-radius:8px;background:var(--cream)}
+.line .nm{font-weight:600;line-height:1.25;font-size:.95rem}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:999px;margin-top:8px}
+.qty button{background:none;border:0;width:30px;height:30px;font-size:1.05rem}
+.qty span{min-width:20px;text-align:center;font-size:.92rem}
+.rm{background:none;border:0;color:var(--mute);font-size:.78rem;text-decoration:underline;margin-top:6px;display:block;margin-left:auto}
+.empty{text-align:center;color:var(--mute);padding:50px 10px}
+#pk-foot{padding:16px 20px 20px;border-top:1px solid var(--line);background:#fff}
+.sum{display:flex;justify-content:space-between;font-size:.94rem;margin:3px 0}
+.sum.t{font-weight:700;font-size:1.15rem;margin:8px 0 12px}
+.help{font-size:.8rem;color:var(--mute);margin-top:10px;text-align:center}
+.help a{color:var(--plum)}
+.free{color:var(--ok)}
+#pk-co{position:fixed;inset:0;z-index:110;background:var(--paper);overflow:auto;display:none}
+#pk-co.on{display:block}
+#pk-co .in{max-width:960px;margin:0 auto;padding:22px 20px 60px;display:grid;grid-template-columns:1.2fr .8fr;gap:36px}
+@media(max-width:820px){#pk-co .in{grid-template-columns:1fr}#pk-co .sumbox{order:-1}}
+#pk-co h2{font-size:2.1rem;margin-bottom:6px}
+#pk-co .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){#pk-co .row2{grid-template-columns:1fr}}
+#pk-co .f{margin-bottom:12px}
+label{font-size:.85rem;color:var(--mute);display:block;margin-bottom:4px;font-weight:600}
+input,textarea,select{font:inherit;color:inherit;background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:.6rem .75rem;width:100%}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--plum);outline-offset:1px;border-color:var(--plum)}
+.sumbox{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;align-self:start}
+.sumbox .l{display:flex;justify-content:space-between;gap:10px;font-size:.9rem;padding:6px 0;border-bottom:1px dashed var(--line)}
+.pay{background:var(--cream);border-radius:10px;padding:12px 14px;font-size:.92rem;margin:6px 0 14px}
+.thanks{max-width:540px;margin:70px auto;text-align:center;padding:0 20px}
+.thanks .ck{width:72px;height:72px;border-radius:50%;background:var(--ok);color:#fff;font-size:2.3rem;display:grid;place-items:center;margin:0 auto 18px}
+.thanks .no{font:700 1.4rem 'Fraunces';background:var(--cream);display:inline-block;padding:.3rem 1.1rem;border-radius:10px;margin:10px 0}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,30px);background:var(--plum-d);color:#fff;padding:.7rem 1.2rem;border-radius:999px;opacity:0;transition:.3s;z-index:120;font-size:.92rem;pointer-events:none;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+.crumbs{font-size:.85rem;color:var(--mute);padding:20px 0}
+.crumbs a:hover{color:var(--plum)}
+.pp{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;padding-bottom:70px;align-items:start}
+@media(max-width:860px){.pp{grid-template-columns:1fr;gap:24px}}
+.gal .main{border-radius:var(--r);overflow:hidden;background:var(--cream);aspect-ratio:4/5}
+.gal .main img{width:100%;height:100%;object-fit:cover;transition:opacity .2s}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.thumbs button{border:2px solid transparent;border-radius:10px;overflow:hidden;padding:0;background:none;cursor:pointer;aspect-ratio:1}
+.thumbs button.on{border-color:var(--plum)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.info h1{font-size:clamp(2.1rem,4.4vw,3.1rem);margin:8px 0 8px}
+.info .pr{font-size:1.55rem;margin:6px 0 14px;color:var(--plum);font-weight:700}
+.info .lead{color:#3d3140;font-size:1.02rem;max-width:48ch}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:6px 0}
+.seg button{border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:10px 6px;font:600 .85rem 'Nunito Sans';cursor:pointer;text-align:center}
+.seg button.on{border-color:var(--plum);background:var(--cream);color:var(--plum)}
+.fld{margin:20px 0}
+.fld>.lb{font-weight:700;margin-bottom:8px;font-size:.92rem;color:var(--plum)}
+.sizes{display:flex;gap:10px;flex-wrap:wrap}
+.sizes button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font:600 .9rem 'Nunito Sans'}
+.sizes button.on{border-color:var(--plum);background:var(--plum);color:#fff}
+.addrow{display:flex;gap:12px;align-items:center;margin-top:24px}
+.qty2{display:flex;align-items:center;border:2px solid var(--plum);border-radius:999px;background:#fff}
+.qty2 button{width:40px;height:48px;border:0;background:none;font-size:1.1rem;font-weight:700;color:var(--plum)}
+.qty2 span{min-width:24px;text-align:center;font-weight:700}
+.addrow .btn{flex:1}
+.perks{list-style:none;margin:22px 0;display:grid;gap:8px;font-size:.92rem}
+.perks li::before{content:"✓";color:var(--ok);font-weight:700;margin-right:8px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:700;color:var(--plum);font-size:.98rem}
+details p,details li{margin-top:8px;color:var(--mute);font-size:.92rem}
+table{width:100%;border-collapse:collapse;margin-top:6px;font-size:.88rem}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
+th{color:var(--plum);font-weight:700}
+.help2{font-size:.85rem;color:var(--mute);margin-top:14px}.help2 a{color:var(--plum)}
+.more{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:60px 0 70px}
+.more a{text-decoration:none;display:block}
+.more img{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;width:100%}
+.more b{display:block;margin-top:8px;font:600 1.15rem 'Fraunces';color:var(--plum)}
+footer{background:var(--plum-d);color:#d8cfd9;padding:40px 0 24px;margin-top:30px;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+ <a class="logo" href="index.html"><img src="img/logo.jpg" alt="Puterko logo">Puterko</a>
+ <nav class="main"><a href="puter.html">Puteri</a><a href="index.html#pakleti">Pokloni pakete</a><a href="index.html#prica">Naša priča</a><a href="index.html#utisci">Utisci</a></nav>
+ <button class="cartbtn" data-open-cart aria-label="Otvori korpu">Korpa <span class="n cart-n">0</span></button>
+</div></header>
+
+<div class="wrap">
+<p class="crumbs"><a href="index.html">Početna</a> / <a href="puter.html">Puteri</a> / <span id="crumbName">Lešnikov puter</span></p>
+<div class="pp">
+ <div class="gal"><div class="main"><img id="mainimg" src="img/lesnik-170.jpg" alt="Puterko puter"></div><div class="thumbs" id="thumbs"></div></div>
+ <div class="info">
+  <span class="eyebrow">Puter od orašastih plodova</span>
+  <h1 id="ttl">Lešnikov puter</h1>
+  <div class="pr" id="prc">890 RSD</div>
+  <p class="lead" id="lead"></p>
+
+  <div class="fld"><div class="lb">Ukus</div>
+   <div class="seg" id="seg"></div></div>
+
+  <div class="fld" id="sizeWrap"><div class="lb">Veličina</div>
+   <div class="sizes" id="sizes"></div></div>
+
+  <div class="addrow"><div class="qty2"><button type="button" id="qm" aria-label="Manje">&minus;</button><span id="qv">1</span><button type="button" id="qp" aria-label="Više">+</button></div>
+   <button class="btn" type="button" id="add">Dodaj u korpu</button></div>
+
+  <ul class="perks">
+   <li>100% prirodno, bez dodatog ulja i šećera</li>
+   <li>Posno i vegansko</li>
+   <li>Plaćanje pouzećem, dostava širom Srbije</li>
+  </ul>
+
+  <details open><summary>O proizvodu</summary><p id="descFull"></p></details>
+  <details><summary>Sastav i nutritivne vrednosti (na 100g)</summary><div id="nutri"></div></details>
+  <details><summary>Kako da najbolje iskoristite</summary><ul id="tipsList"></ul></details>
+  <details><summary>Čuvanje i rok trajanja</summary><p>Rok trajanja 6 meseci od proizvodnje. Čuvati na suvom mestu, zaštićenom od svetlosti. Nakon otvaranja može doći do prirodnog izdvajanja ulja na površini — samo promešajte kašikom pre upotrebe.</p></details>
+  <details><summary>Dostava i plaćanje</summary><p>Šaljemo širom Srbije, paket stiže za 1–2 radna dana. Dostava je 390 RSD, besplatna preko 3.000 RSD porudžbine. Plaćanje je pouzećem, pri preuzimanju paketa.</p></details>
+  <p class="help2">Pitanja? Pišite nam na Instagramu <a href="https://www.instagram.com/puterko.ns/" target="_blank" rel="noopener">@puterko.ns</a></p>
+ </div>
+</div>
+
+<div class="more">
+ <a href="index.html#pakleti"><img src="img/paket-classic.jpg" alt="Classic paket"><b>Classic paket</b></a>
+ <a href="index.html#pakleti"><img src="img/paket-premium.jpg" alt="Premium paket"><b>Premium paket</b></a>
+ <a href="index.html#pakleti"><img src="img/paket-6.jpg" alt="Paket 6"><b>Paket 6</b></a>
+ <a href="index.html#pakleti"><img src="img/paket-classic-big.jpg" alt="Classic paket BIG"><b>Classic paket BIG</b></a>
+</div>
+</div>
+
+<footer><div class="wrap"><span>© 2026 Puterko · Puteri od orašastih plodova · Futog, Novi Sad</span><a href="https://www.instagram.com/puterko.ns/" target="_blank" rel="noopener">Instagram @puterko.ns</a></div></footer>
+
+<script>
+(function(){
+var KEY='puterko-cart-v1';
+var SHIP=390, FREE_AT=3000;
+var PRODUCTS={
+ 'kikiriki-170':{name:'Kikiriki puter 170g',price:350,img:'kikiriki-170.jpg'},
+ 'kikiriki-350':{name:'Kikiriki puter 350g',price:630,img:'kikiriki-350.jpg'},
+ 'lesnik-170':{name:'Lešnikov puter 170g',price:890,img:'lesnik-170.jpg'},
+ 'lesnik-350':{name:'Lešnikov puter 350g',price:1640,img:'lesnik-350.jpg'},
+ 'badem-170':{name:'Bademov puter 170g',price:720,img:'badem-170.jpg'},
+ 'badem-350':{name:'Bademov puter 350g',price:1380,img:'badem-350.jpg'},
+ 'indijski-170':{name:'Indijski orah puter 170g',price:780,img:'indijski-170.jpg'},
+ 'indijski-350':{name:'Indijski orah puter 350g',price:1520,img:'indijski-350.jpg'},
+ 'pistac-170':{name:'Pistać puter 170g',price:1350,img:'pistac-170.jpg'},
+ 'cokolesnik-170':{name:'Čoko-lešnik puter 170g',price:990,img:'cokolesnik-170.jpg'},
+ 'paket-classic':{name:'Classic paket',price:2540,img:'paket-classic.jpg'},
+ 'paket-premium':{name:'Premium paket',price:3890,img:'paket-premium.jpg'},
+ 'paket-6':{name:'Paket 6',price:4890,img:'paket-6.jpg'},
+ 'paket-classic-big':{name:'Classic paket BIG',price:4850,img:'paket-classic-big.jpg'}
+};
+function fmt(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' RSD'}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+var cart=[];
+function load(){try{var r=localStorage.getItem(KEY);cart=r?JSON.parse(r):[];if(!Array.isArray(cart))cart=[];cart=cart.filter(function(l){return l&&PRODUCTS[l.id]})}catch(e){cart=[]}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(cart))}catch(e){}}
+function add(id,qty){
+ var p=PRODUCTS[id];if(!p)return;qty=qty||1;
+ var f=cart.filter(function(l){return l.id===id})[0];
+ if(f)f.qty+=qty;else cart.push({id:id,qty:qty});
+ save();render();toast(p.name+' je u korpi 🐿️');
+}
+function totals(){
+ var sub=0;cart.forEach(function(l){sub+=PRODUCTS[l.id].price*l.qty});
+ var ship=cart.length===0?0:(sub>=FREE_AT?0:SHIP);
+ return {sub:sub,ship:ship,total:sub+ship,count:cart.reduce(function(a,l){return a+l.qty},0)};
+}
+var $=function(s,r){return (r||document).querySelector(s)};
+var HELP='Pitanja? Pišite nam na Instagramu <a href="https://www.instagram.com/puterko.ns/" target="_blank" rel="noopener">@puterko.ns</a>';
+function build(){
+ var h='<div id="pk-ov"></div><aside id="pk-drawer" aria-label="Korpa" aria-hidden="true"><header><h3>Vaša korpa</h3><button class="x" id="pk-close" aria-label="Zatvori">&times;</button></header><div id="pk-lines"></div><div id="pk-foot"></div></aside>'+
+ '<div id="pk-co" role="dialog" aria-modal="true" aria-label="Poručivanje"></div><div class="toast" id="pk-toast"></div>';
+ var d=document.createElement('div');d.innerHTML=h;while(d.firstChild)document.body.appendChild(d.firstChild);
+ $('#pk-ov').addEventListener('click',closeCart);$('#pk-close').addEventListener('click',closeCart);
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeCart()});
+ document.querySelectorAll('[data-open-cart]').forEach(function(b){b.addEventListener('click',openCart)});
+}
+function openCart(){$('#pk-drawer').classList.add('on');$('#pk-ov').classList.add('on');$('#pk-drawer').setAttribute('aria-hidden','false')}
+function closeCart(){$('#pk-drawer').classList.remove('on');$('#pk-ov').classList.remove('on');$('#pk-drawer').setAttribute('aria-hidden','true')}
+var tt;function toast(m){var t=$('#pk-toast');t.innerHTML=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('on')},1800)}
+function imgOf(id){return 'img/'+PRODUCTS[id].img}
+function render(){
+ var t=totals();
+ document.querySelectorAll('.cart-n').forEach(function(n){n.textContent=t.count});
+ var L=$('#pk-lines'),F=$('#pk-foot');if(!L)return;
+ if(!cart.length){L.innerHTML='<div class="empty"><p style="font-family:Fraunces,serif;font-size:1.5rem;color:var(--ink)">Korpa je prazna</p><p>Izaberite puter ili paket i dodajte ga u korpu.</p></div>';
+  F.innerHTML='<button class="btn block ghost" id="pk-cont">Nastavi kupovinu</button><p class="help">'+HELP+'</p>';$('#pk-cont').addEventListener('click',closeCart);return}
+ L.innerHTML=cart.map(function(l,i){var p=PRODUCTS[l.id];return '<div class="line"><img src="'+imgOf(l.id)+'" alt="" loading="lazy"><div><div class="nm">'+esc(p.name)+'</div><div class="qty"><button data-a="-" data-i="'+i+'" aria-label="Manje">&minus;</button><span>'+l.qty+'</span><button data-a="+" data-i="'+i+'" aria-label="Više">+</button></div></div><div style="text-align:right"><div class="price" style="font-weight:700;color:var(--plum)">'+fmt(p.price*l.qty)+'</div><button class="rm" data-a="x" data-i="'+i+'">Ukloni</button></div></div>'}).join('');
+ var need=FREE_AT-t.sub;
+ F.innerHTML='<div class="sum"><span>Međuzbir</span><span>'+fmt(t.sub)+'</span></div>'+
+  '<div class="sum"><span>Dostava</span><span class="'+(t.ship?'':'free')+'">'+(t.ship?fmt(t.ship):'Besplatno')+'</span></div>'+
+  (need>0?'<div class="help" style="text-align:left;margin:4px 0">Dodajte još '+fmt(need)+' u korpu za besplatnu dostavu.</div>':'')+
+  '<div class="sum t"><span>Ukupno</span><span>'+fmt(t.total)+'</span></div><button class="btn block" id="pk-go">Nastavi na poručivanje</button><p class="help">Plaćanje pouzećem, pri preuzimanju paketa.<br>'+HELP+'</p>';
+ $('#pk-go').addEventListener('click',checkout);
+}
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('#pk-lines [data-a]');if(!b)return;var i=+b.dataset.i,a=b.dataset.a;
+ if(a==='+')cart[i].qty++;else if(a==='-'){cart[i].qty--;if(cart[i].qty<1)cart.splice(i,1)}else cart.splice(i,1);save();render()});
+function checkout(){
+ closeCart();var t=totals(),C=$('#pk-co');
+ C.innerHTML='<div class="in"><form id="pk-form" novalidate><button type="button" class="x" id="pk-back" style="margin-left:-8px;font-size:1rem">&larr; Nazad na korpu</button><h2>Podaci za isporuku</h2><p style="color:var(--mute);margin-bottom:18px">Popunite podatke i potvrdite porudžbinu. Plaćate pouzećem.</p>'+
+ '<div class="f"><label for="f-ime">Ime i prezime *</label><input id="f-ime" name="ime" required autocomplete="name"></div>'+
+ '<div class="f"><label for="f-adr">Adresa (ulica i broj) *</label><input id="f-adr" name="adresa" required autocomplete="street-address"></div>'+
+ '<div class="row2"><div class="f"><label for="f-grad">Grad *</label><input id="f-grad" name="grad" required autocomplete="address-level2"></div><div class="f"><label for="f-pb">Poštanski broj *</label><input id="f-pb" name="pb" required inputmode="numeric" autocomplete="postal-code"></div></div>'+
+ '<div class="row2"><div class="f"><label for="f-tel">Telefon *</label><input id="f-tel" name="tel" type="tel" required autocomplete="tel"></div><div class="f"><label for="f-em">E-mail *</label><input id="f-em" name="email" type="email" required autocomplete="email"></div></div>'+
+ '<div class="f"><label for="f-nap">Napomena (nije obavezno)</label><textarea id="f-nap" name="napomena" rows="3"></textarea></div>'+
+ '<div class="pay"><strong>Plaćanje pouzećem</strong> — novac predajete kuriru pri preuzimanju paketa.</div><p id="pk-err" style="color:#b3261e;font-size:.9rem;margin-bottom:10px" role="alert"></p>'+
+ '<button class="btn block" type="submit">Potvrdi porudžbinu · '+fmt(t.total)+'</button><p class="help">'+HELP+'</p></form>'+
+ '<div class="sumbox"><h3 style="font-size:1.4rem;margin-bottom:8px">Vaša porudžbina</h3>'+cart.map(function(l){var p=PRODUCTS[l.id];return '<div class="l"><span>'+l.qty+' × '+esc(p.name)+'</span><span>'+fmt(p.price*l.qty)+'</span></div>'}).join('')+
+ '<div class="l"><span>Dostava</span><span>'+(t.ship?fmt(t.ship):'Besplatno')+'</span></div><div class="l" style="font-weight:700;font-size:1.05rem;border:0"><span>Ukupno</span><span>'+fmt(t.total)+'</span></div></div></div>';
+ C.classList.add('on');document.body.style.overflow='hidden';C.scrollTop=0;
+ $('#pk-back').addEventListener('click',function(){C.classList.remove('on');document.body.style.overflow='';openCart()});
+ $('#pk-form').addEventListener('submit',function(e){e.preventDefault();var f=e.target,bad=null;
+  f.querySelectorAll('[required]').forEach(function(i){if(!bad&&!i.value.trim())bad=i});
+  var em=f.email.value.trim();
+  if(!bad&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em))bad=f.email;
+  if(bad){$('#pk-err').textContent='Proverite polje: '+(bad.labels&&bad.labels[0]?bad.labels[0].textContent.replace(' *',''):'');bad.focus();return}
+  var no='PK-'+String(Date.now()).slice(-6);var name=f.ime.value.trim().split(/\s+/)[0];
+  var tot=totals();cart=[];save();render();
+  C.innerHTML='<div class="thanks"><div class="ck">&#10003;</div><h2>Hvala, porudžbina je primljena</h2><div class="no">Broj porudžbine: '+no+'</div><p>'+esc(name)+', hvala na poverenju. Ukupno za plaćanje pouzećem: <strong>'+fmt(tot.total)+'</strong>.</p><p style="color:var(--mute);margin-top:10px">Javićemo se čim paket krene na put. 🐿️</p><p style="margin-top:22px"><button class="btn" id="pk-done">Nazad na sajt</button></p><p class="help">'+HELP+'</p></div>';
+  $('#pk-done').addEventListener('click',function(){C.classList.remove('on');document.body.style.overflow=''});
+  C.scrollTop=0});
+}
+window.PK={add:add,fmt:fmt,esc:esc,PRODUCTS:PRODUCTS,openCart:openCart};
+load();
+function init(){build();render()}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+<script>
+(function(){
+var P=window.PK,$=function(s){return document.querySelector(s)};
+var UKUSI={
+ kikiriki:{name:'Kikiriki puter',lead:'Potpuno prirodan namaz od čistog kikirikija. Intenzivnog ukusa, koristi se samostalno ili kao ključni sastojak zdravih poslastica, energetskih barova i šejkova.',desc:'Puterkov kikiriki puter je potpuno prirodan namaz, izrađen od čistog kikirikija. Ne sadrži hidrogenizovane masti, rafinisan šećer, aditive, veštačke boje i konzervanse. Svoju specifičnu teksturu dobija dvostepenim procesom mlevenja blanširanog zrna kikirikija, čime se u potpunosti zadržavaju svi nutrijenti. Pogodan je za sportsku, vegansku i posnu ishranu.',sastav:'100% kikiriki. Može sadržati badem, lešnik, indijski orah i gluten u tragovima.',nutri:{kcal:597,masti:49.1,mastiSat:5.8,uh:16.3,secer:4.2,prot:23.4,so:0.1},sizes:{'170':'kikiriki-170','350':'kikiriki-350'},tips:['Ovsene kaše i chia puding','Dresing za salate','Sos za testenine','Umak za pečurke']},
+ lesnik:{name:'Lešnikov puter',lead:'Izuzetno intenzivnog ukusa — često se konzumira pravo iz teglice. Sjajan dodatak ovsenim kašama, šejkovima, palačinkama i voćnim salatama.',desc:'Puterko lešnikov puter je potpuno prirodan namaz, izrađen od čistog lešnika. Ne sadrži hidrogenizovane masti, rafinisan šećer, aditive, veštačke boje i konzervanse. Svoju specifičnu teksturu dobija dvostepenim procesom mlevenja najkvalitetnijeg lešnika, čime se u potpunosti zadržavaju svi nutrijenti. Pogodan je za sportsku, vegansku i posnu ishranu.',sastav:'100% lešnik. Može sadržati ostale orašaste plodove, kikiriki i gluten u tragovima.',nutri:{kcal:661,masti:61.1,mastiSat:4.8,uh:17.0,secer:4.3,prot:15.0,so:0.1},sizes:{'170':'lesnik-170','350':'lesnik-350'},tips:['Ovsene kaše i chia puding','Dresing za salate','Sos za testenine, umak za pečurke','Kremovi i palačinke']},
+ badem:{name:'Bademov puter',lead:'Neutralnog ukusa, što ga čini idealnim sastojkom zdravih poslastica, energetskih barova, ovsenih kaša i dresinga za salate.',desc:'Puterko bademov puter je potpuno prirodan namaz, izrađen od čistog badema. Ne sadrži hidrogenizovane masti, rafinisan šećer, aditive, veštačke boje i konzervanse. Svoju specifičnu teksturu dobija dvostepenim procesom mlevenja celog jezgra badema, čime se u potpunosti zadržavaju svi nutrijenti. Pogodan je za sportsku, vegansku i posnu ishranu.',sastav:'100% badem. Može sadržati ostale orašaste plodove, kikiriki i gluten u tragovima.',nutri:{kcal:619,masti:48.2,mastiSat:14.5,uh:21.7,secer:3.7,prot:23.1,so:0.05},sizes:{'170':'badem-170','350':'badem-350'},tips:['Ovsene kaše','Homemade mleko','Dresing za salate, chia puding','Dodatak kuvanim žitaricama']},
+ indijski:{name:'Indijski orah puter',lead:'Tokom suvog pečenja dobija blago sladak ukus. Idealan dodatak šejkovima, voćnim jogurtima, ovsenim kašama i zdravim sladoledima.',desc:'Puterko puter od indijskog oraha je potpuno prirodan namaz, izrađen od čistog neslanog indijskog oraha. Ne sadrži hidrogenizovane masti, rafinisan šećer, aditive, veštačke boje i konzervanse. Svoju specifičnu teksturu dobija dvostepenim procesom mlevenja jezgra indijskog oraha. Pogodan je za sportsku, vegansku i posnu ishranu.',sastav:'100% indijski orah. Može sadržati ostale orašaste plodove, kikiriki i gluten u tragovima.',nutri:{kcal:611,masti:46.4,mastiSat:13.0,uh:31.3,secer:10.5,prot:16.1,so:1.3},sizes:{'170':'indijski-170','350':'indijski-350'},tips:['Homemade "kinezi", rižoto','Banana bread, humus','Sos za testeninu','Zdravi kolači i torte, jela sa leblebijama/sočivom']},
+ pistac:{name:'Pistać puter',lead:'Nesumnjivo najveći favorit — zahvaljujući nesvakidašnjem ukusu i teksturi, ovaj puter nikoga nije ostavio ravnodušnim.',desc:'Puterko pistać je puter koji se nesumnjivo izdvojio kao najveći favorit. Ne sadrži hidrogenizovane masti, rafinisan šećer, aditive, veštačke boje i konzervanse. Svoju specifičnu teksturu dobija dvostepenim procesom mlevenja jezgra pistaća. Pogodan je za sportsku, vegansku i posnu ishranu.',sastav:'99,5% pistać, 0,5% himalajska so. Može sadržati kikiriki, ostale orašaste plodove i gluten u tragovima.',nutri:{kcal:560,masti:45.1,mastiSat:6.2,uh:26.7,secer:7.6,prot:20.2,so:0.5},sizes:{'170':'pistac-170'},tips:['Sve vrste paste (zamena za sir)','Smoothie, beli krem','Kremasti kolači','Dresing za obrok salate']},
+ cokolesnik:{name:'Čoko-lešnik puter',lead:'Zdravija i kvalitetnija varijanta komercijalnih kremova — ne sadrži dodati šećer. Najčešće se jede samostalno ili kao fil za palačinke.',desc:'Čoko-lešnik puter predstavlja zdraviju i kvalitetniju varijantu komercijalnih kremova, ne sadrži dodati šećer! Osnovu čini lešnik (min. 80%), dok mu posebnu aromu daje najfinija tamna čokolada bez šećera, sa preko 55% kakaa. Ne sadrži konzervanse, veštačke arome i boje. Pogodan je za posnu i vegansku ishranu, ali i za ishranu dece.',sastav:'80% lešnik, 20% tamna čokolada bez šećera (kakao buter, maltitol, biljna mast, kakao prah, prirodna aroma, stevia, sojin lecitin). Alergeni: lešnik, soja.',nutri:{kcal:647,masti:57.5,mastiSat:8.6,uh:22,secer:4.6,prot:13.6,so:0.1},sizes:{'170':'cokolesnik-170'},tips:['Sve vrste paste','Smoothie, beli krem','Kremasti kolači, preliv za poslastice','Ovsene pahuljice']}
+};
+var order=['kikiriki','lesnik','badem','indijski','pistac','cokolesnik'];
+var flavor='lesnik';
+try{var q=new URLSearchParams(location.search).get('ukus');if(q&&UKUSI[q])flavor=q}catch(e){}
+var size=null,qty=1;
+function drawSeg(){
+ $('#seg').innerHTML=order.map(function(k){return '<button type="button" data-k="'+k+'" class="'+(k===flavor?'on':'')+'">'+UKUSI[k].name.replace(' puter','')+'</button>'}).join('');
+ $('#seg').querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){setFlavor(b.dataset.k)})});
+}
+function drawSizes(){
+ var u=UKUSI[flavor],keys=Object.keys(u.sizes);
+ if(keys.length<2){$('#sizeWrap').hidden=true;size=keys[0];return}
+ $('#sizeWrap').hidden=false;
+ if(!size||!u.sizes[size])size=keys[0];
+ $('#sizes').innerHTML=keys.map(function(s){var pid=u.sizes[s];return '<button type="button" data-s="'+s+'" class="'+(s===size?'on':'')+'">'+s+'g · '+P.fmt(P.PRODUCTS[pid].price)+'</button>'}).join('');
+ $('#sizes').querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){size=b.dataset.s;drawSizes();updatePrice()})});
+}
+function curId(){return UKUSI[flavor].sizes[size]}
+function updatePrice(){$('#prc').textContent=P.fmt(P.PRODUCTS[curId()].price)}
+function drawThumbs(){
+ var imgs=['img/'+flavor+'-170.jpg'];
+ var u=UKUSI[flavor];if(u.sizes['350'])imgs.push('img/'+flavor+'-350.jpg');
+ imgs.push('img/hero-'+({kikiriki:'kikiriki',lesnik:'lesnik',badem:'badem',indijski:'indijski',pistac:'pistac',cokolesnik:'cokolesnik'}[flavor])+'.jpg');
+ $('#thumbs').innerHTML=imgs.map(function(src,i){return '<button type="button" data-src="'+src+'" class="'+(i===0?'on':'')+'"><img src="'+src+'" alt=""></button>'}).join('');
+ $('#mainimg').src=imgs[0];
+ $('#thumbs').querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){$('#mainimg').src=b.dataset.src;$('#thumbs').querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)})})});
+}
+function setFlavor(k){
+ flavor=k;size=null;var u=UKUSI[k];
+ $('#ttl').textContent=u.name;$('#crumbName').textContent=u.name;$('#lead').textContent=u.lead;$('#descFull').textContent=u.desc;
+ $('#nutri').innerHTML='<table><thead><tr><th>Sastojak</th><th>na 100g</th></tr></thead><tbody>'+
+  '<tr><td>Energetska vrednost</td><td>'+u.nutri.kcal+' kcal</td></tr>'+
+  '<tr><td>Masti (od toga zasićene)</td><td>'+u.nutri.masti+' g ('+u.nutri.mastiSat+' g)</td></tr>'+
+  '<tr><td>Ugljeni hidrati (od toga šećeri)</td><td>'+u.nutri.uh+' g ('+u.nutri.secer+' g)</td></tr>'+
+  '<tr><td>Proteini</td><td>'+u.nutri.prot+' g</td></tr>'+
+  '<tr><td>So</td><td>'+u.nutri.so+' g</td></tr></tbody></table><p style="margin-top:8px;font-size:.85rem;color:var(--mute)">*Sastav: '+u.sastav+'</p>';
+ $('#tipsList').innerHTML=u.tips.map(function(t){return '<li>'+t+'</li>'}).join('');
+ drawSeg();drawSizes();drawThumbs();updatePrice();
+ try{history.replaceState(null,'','?ukus='+k)}catch(e){}
+}
+$('#qm').addEventListener('click',function(){qty=Math.max(1,qty-1);$('#qv').textContent=qty});
+$('#qp').addEventListener('click',function(){qty=Math.min(20,qty+1);$('#qv').textContent=qty});
+$('#add').addEventListener('click',function(){P.add(curId(),qty)});
+setFlavor(flavor);
+})();
+</script>
+</body>
+</html>
